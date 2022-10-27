@@ -9,6 +9,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 @SpringBootTest
 class AppTest {
     @Autowired
@@ -24,6 +26,8 @@ class AppTest {
     @Test
     @DisplayName("게시물 작성")
     void t2() {
-        articleService.write("제목3", "내용3");
+        long id = articleService.write("제목3", "내용3");
+        assertThat(id).isEqualTo(4);
     }
+
 }
