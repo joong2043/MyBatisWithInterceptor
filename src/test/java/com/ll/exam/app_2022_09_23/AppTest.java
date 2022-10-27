@@ -20,4 +20,10 @@ class AppTest {
         List<Article> articles = articleService.getArticles();
         System.out.println(articles);
     }
+
+    @Test
+    @DisplayName("게시물 작성")
+    void t2() {
+        articleService.write("제목3", "내용3");
+    }
 }
