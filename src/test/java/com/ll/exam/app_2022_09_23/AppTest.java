@@ -30,4 +30,13 @@ class AppTest {
         assertThat(id).isEqualTo(4);
     }
 
+    @Test
+    @DisplayName("게시물 id에 맞게 받기")
+    void t3() {
+        Article article = articleService.getArticleById(1);
+        assertThat(article.getContent()).isEqualTo("내용1");
+    }
+
+
+
 }
